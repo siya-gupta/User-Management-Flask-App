@@ -1,0 +1,37 @@
+<!-- getusersbyname.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user Details ID</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+    <h1>user Details by ID</h1>
+
+    {% if df %}
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>location</th>
+                <th>Email</th>
+                
+            </tr>
+            {% for user in df %}
+                <tr>
+                    <td>{{ user['user_id'] }}</td>
+                    <td>{{ user['name'] }}</td>
+                    <td>{{ user['location'] }}</td>
+                    <td>{{ user['Email'] }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No user details found for the specified user ID.</p>
+    {% endif %}
+
+</body>
+</html>
